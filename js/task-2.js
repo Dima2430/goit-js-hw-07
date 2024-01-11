@@ -28,16 +28,18 @@ const images = [
   },
 ];
 
+const gallery = document.querySelector('.gallery');
 
-for (let index = 0; index <6; index++) {
+images.forEach(image => {
   const liItem = document.createElement('li');
-  const image = document.createElement('img')
-  image.setAttribute('src', images[index % images.length].url)
-  image.setAttribute('alt', images[index % images.length].alt)
-  image.setAttribute('width', '360px')
-   image.setAttribute('height','300px')
-  const gallery = document.querySelector('.gallery');
-  liItem.appendChild(image);
-  gallery.appendChild(liItem);
-  
-}
+  const eachImage = document.createElement('img');
+  eachImage.setAttribute('src', image.url);
+  eachImage.setAttribute('alt', image.alt);
+  eachImage.setAttribute('width', '360px');
+  eachImage.setAttribute('height', '300px');
+  liItem.append(eachImage);
+gallery.appendChild(liItem);
+});
+
+ 
+
