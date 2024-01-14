@@ -28,18 +28,13 @@ const images = [
   },
 ];
 
-const gallery = document.querySelector('.gallery');
-
+const gallery = document.querySelector('.gallery'); 
+let htmlGallery = '';
 images.forEach(image => {
-  const liItem = document.createElement('li');
-  const eachImage = document.createElement('img');
-  eachImage.setAttribute('src', image.url);
-  eachImage.setAttribute('alt', image.alt);
-  eachImage.setAttribute('width', '360px');
-  eachImage.setAttribute('height', '300px');
-  liItem.append(eachImage);
-gallery.appendChild(liItem);
+  htmlGallery += `<li>
+    <img src="${image.url}" alt="${image.alt}" width="360px" height="300px"></img>
+ </li>`;
 });
-
+gallery.insertAdjacentHTML('beforeend', htmlGallery)
  
 
